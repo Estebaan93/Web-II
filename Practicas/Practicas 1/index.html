@@ -8,17 +8,17 @@
 </head>
 <body>
     <h1> Operadores Funcionales</h1>
-<h4>        Filter
+    <h4>        Filter
     “El método filter() crea un nuevo array con todos los elementos que cumplan la 
     condición implementada por la función dada”<br>
     => El método filter no genera efecto colateral.</h4>
-<p>
-Ejemplo:
-const palabras = ['casa', 'perro', 'electrodoméstico', 'universidad', 
-'mueblería', 'gato']; <br>
-const resultado = palabras.filter(p => p.length > 6);
-console.log(resultado)
-<hr></p>
+    <p>Ejemplo:
+    const palabras = ['casa', 'perro', 'electrodoméstico', 'universidad', 
+    'mueblería', 'gato']; <br>
+    const resultado = palabras.filter(p => p.length > 6);
+    console.log(resultado)
+    <hr></p>
+
     <h4>Map
         “El método map() crea un nuevo array con los resultados de la llamada a la función 
         indicada aplicados a cada uno de sus elementos.” <br>
@@ -27,6 +27,7 @@ console.log(resultado)
             var doubles = numbers.map(function(x) {<br>
              return x * 2;<br>
             });<hr></p>
+
     <h4>Reduce
         “El método reduce() ejecuta una función reductora sobre cada elemento de un array, 
         devolviendo como resultado un único valor.”<br>
@@ -38,6 +39,7 @@ console.log(resultado)
             console.log(array1.reduce(reducer)); // expected output: 10 (1 + 2 + 3 + 4) <br>
             console.log(array1.reduce(reducer, 5)); // expected output: 15 <hr>
         </p>
+
         <h4>Find
             “El método find() devuelve el valor del primer elemento del array que cumple la función 
             de prueba proporcionada.” <br>
@@ -47,6 +49,7 @@ console.log(resultado)
                 const nroMayorADiez = numeros.find(n => n > 10); <br>
                 console.log(nroMayorADiez); <br>
                 // expected output: 12</p> <hr>
+
         <h4>Some
             “El método some() comprueba si al menos un elemento del array cumple con la
             condición implementada por la función proporcionada.”</h4>
@@ -58,6 +61,7 @@ console.log(resultado)
             // expected output: true <br>
             </p>
             <hr>
+
         <h4>
             Every
         “El método every() determina si todos los elementos en el array satisfacen una 
@@ -68,13 +72,11 @@ console.log(resultado)
         console.log(numeros.every(n => n >=3)); <br>
         // expected output: false <br>
         </p><hr>
-            <h1> Funciones anónimas</h1>
+
+        <h1> Funciones anónimas</h1>
         <h4>
-            Las funciones anónimas, son funciones que al momento de declararlas no les asignamos un nombre.
-            
-        </h4>
-        <p>
-            var saludo= function(){<br>
+            Las funciones anónimas, son funciones que al momento de declararlas no les asignamos un nombre.</h4>
+        <p>var saludo= function(){<br>
                 //codigo;<br>
             };<br>
             Podemos asignar estas funciones a una variable. Para ejecutar dicha función debemos hacerlo 
@@ -84,6 +86,7 @@ console.log(resultado)
                } <br>
                saludo("Rodrigo"); <br>
             </p><hr>
+
         <h4>Funciones anónimas auto-invocadas / autoejecutables
             Éstas funciones, una vez declaradas, se llaman a sí mismas, ejecutando el código definido en ellas.
             (function (){código;})();</h4>
@@ -99,6 +102,49 @@ console.log(resultado)
             <p>let alumno="Juan2" <br>
             console.log(alumno); <br>
             Juan2</p>
+            <hr>
+
+            <h1> setTimeout()</h1>
+            <p>El método setTimeout() llama una función o evalúa una expresión después de un número específico de
+                milisegundos.
+                La función solo se ejecuta una vez.</p>
+            <p>function miFuncion(){ <br>
+                setTimeout(otraFuncion,3000) <br>
+                };</p>
+            <p>function otraFuncion(){ <br>
+                alert("Somos necesarios, un fragmento de la fatalidad; formamos parte del todo, <br>
+                somos en el todo; no hay nada que pueda juzgar, medir, comparar y condenar nuestra <br>
+                existencia, pues ello equivaldría a juzgar, medir, comparar y condenar el todo. <br>
+                Friedrich Nietzsche"); <br>
+                };</p>
+                <p>miFuncion(); //llamamos a la función</p>
+
+            <h4>Parametros <br> setTimeout(a,b);</h4>
+            <p>a = la función que se va a ejecutar pasado el tiempo definido. <br>
+                b = el tiempo que debe “esperar” antes de ejecutar la función. En milisegundos. <br>
+                1000 ms = 1 seg <br>
+                El parámetro “a” es una función previamente definida que podemos llamar o una función anónima definida 
+                dentro del mismo setTimeout <br>
+                setTimeout(function(){ alert("Hello") }, 3000);</p> <hr>
+
+            <h1> setInterval()</h1>
+            <p>El método setInterval() llama a una función o evalúa una expresión cada determinados intervalos de tiempo. <br>
+                var myVar = setInterval(consoleLogFunc, 3000); <br>
+                function consoleLogFunc() { <br>
+                console.log(“Hola!”); <br>
+                }; <br>
+                Detener función <br>
+                function detenerIntervalo(){ <br>
+                clearInterval(myVar) <br>
+                };</p>
+
+                <h4>Parámetros <br>
+                    setInterval(a,b);</h4>
+                <p>a = la función que se va a ejecutar después del intervalo de tiempo definido. <br>
+                    b = el tiempo que debe “esperar” antes de ejecutar la función. En milisegundos. <br>
+                    El parámetro “a” es una función previamente definida que podemos llamar o una función anónima definida dentro del mismo setTimeout
+                    setInterval(function(){ alert("Hello") }, 3000); <br></p>
+            
             
 
     <script src="js.js"></script>

@@ -1,0 +1,37 @@
+body{
+    background-image: url("../../src/1693478.jpg");
+    background-size: 100%;
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    text-align: center;
+}
+h1 {
+    color: #c9c9c9a1;
+}
+
+label{
+    color: white;
+}
+
+#divJquery{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#azarJq, #azarJs{
+    margin-left: 25px;
+}
+
+#selectedColorjQ, #selectedColorjS, #azarJs, #azarJq{
+    width: 100px;
+    height: 100px;
+    border: 1px solid #000;
+    border-radius: 5px;
+    margin-top: 10px;
+    margin-left: 30px;
+    margin-right: 30px;
+    /*display: flex;
+    align-items: center;
+    justify-content: center;*/
+    
+}

@@ -1,0 +1,20 @@
+body{
+    background-image: url("../../src/1693478.jpg");
+    color: whitesmoke;
+    font-family: 'Times New Roman', Times, serif;
+    background-size: 100%;  
+}
+
+.div1{
+    border-radius: 5px;
+    position: relative;
+}
+.div1 img{
+    width: 70%; /* La imagen ocupará el 100% del ancho del contenedor */
+    height: auto; /* Para mantener la proporción de la imagen */
+    display: block; /* Elimina el espacio adicional debajo de la imagen */
+    margin: 0 auto; /* Centra la imagen horizontalmente */
+    position: absolute; /**/
+    left: 12%;
+    /*opacity: 0; Opacar ambas imagenes*/
+}
