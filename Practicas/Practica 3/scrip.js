@@ -25,6 +25,9 @@ $(document).ready(function(){
         var blue = obtenerColorAuto();
         var escribir="rgb("+red+","+green+","+blue+")";
         $("#azarJq").css("backgroundColor",escribir);
+        console.log("rojo "+red);
+        console.log("verde "+green);
+        console.log("azul "+blue);
     }, 2000);
 });
 

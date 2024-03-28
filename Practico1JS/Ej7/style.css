@@ -1,0 +1,10 @@
+body{
+	background-image: url("src/pexels-lorete-m-17651791.jpg");
+	font-family: DIN_Regular,Arial,Verdana,sans-serif;
+
+}
+h3, #ej{
+	background-color: rgb(0, 0, 0, .6);
+	color: white;
+	border-radius: 5px;
+}

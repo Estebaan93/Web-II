@@ -1,0 +1,9 @@
+body{
+    background-image: url("src/pexels-efe-ersoy-20144168.jpg");
+    font-family: 'Times New Roman', Times, serif;
+    background-size: 20%;
+    color: white;
+}
+.par1{
+    padding-top: 150px;
+}

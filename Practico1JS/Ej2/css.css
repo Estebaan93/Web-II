@@ -1,0 +1,11 @@
+body {
+    background-image: url("src/pexels-moises-besada-7785028.jpg");
+    background-size: 40%;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#fecha{
+    padding-top: 300px;
+    padding-left: 40%;
+}
