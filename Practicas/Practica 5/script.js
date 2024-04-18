@@ -1,3 +1,7 @@
+let sum = (a, b) => a + b;
+const sumar= sum(3,3);
+console.log(sumar);
+
 let languaje = "JavaScript";
 let company = {
   name: "EDteam",
