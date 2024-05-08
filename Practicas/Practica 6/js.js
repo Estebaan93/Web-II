@@ -52,7 +52,7 @@ console.log('');
 console.log('Modulo timers funciones asicronas');
 console.log("setTimeout");
 function sumar (a, b) {
-  console.log(a+b);
+  console.log(`funcion setTimeout suma en 5 segundos: ${a+b}`);
 }
 setTimeout(sumar, 5000, 5, 4);
 
