@@ -1,7 +1,33 @@
-let sum = (a, b) => a + b;
-const sumar= sum(3,3);
-console.log(sumar);
+console.log('Funcion flecha permite una sintaxis mas corta:');
+console.log('Funcion flecha una linea:');
+const sumar = (a, b) => a + b;
+console.log(sumar(2,3));
+console.log("------------------------------------------------------------------");
 
+console.log('Funcion flecha multiple lineas:')
+const multiplicar=(a,b)=>{
+  const resultado2= a*b;
+  return resultado2;
+};
+console.log(multiplicar(2,3));
+console.log("------------------------------------------------------------------");
+
+console.log('ES6:');
+let array=[1,2,3,4,5].map(n=>n*2);
+console.log(array);
+console.log("------------------------------------------------------------------");
+const getMajorNumber = (a, b) => {
+  if (a > b) {
+    return a
+  } else {
+    { return b }
+  }
+}
+console.log("Llamamos a la funcion, con condicional y el mayor numero es: " + getMajorNumber(4, 6));
+
+console.log("------------------------------------------------------------------");
+
+console.log('Sintaxis JS')
 let languaje = "JavaScript";
 let company = {
   name: "EDteam",
@@ -10,14 +36,7 @@ let company = {
 }
 console.log("Llamamos a la funcion, y obtenemos el nombre: " + company.name);
 //"EDteam"
-const getMajorNumber = (a, b) => {
-  if (a > b) {
-    return a
-  } else {
-    { return b }
-  }
-}
-console.log("Llamamos a la funcion, con condicional: " + getMajorNumber(4, 6));
+
 console.log("Typeof tipo de dato: " + typeof (languaje));
 console.log("");
 //Inmutabilidad
@@ -28,6 +47,7 @@ console.log("Inmutabilidad: no modifica la variable " + languaje);
 languaje = languaje.toUpperCase();
 console.log(languaje);
 //console.log(languaje.toUpperCase());
+console.log("------------------------------------------------------------------");
 
 //El uso de un metodo de arreglo muta el arreglo
 var foo = [];
@@ -36,7 +56,7 @@ foo.push("gato");
 console.log(foo);
 
 
-
+console.log("------------------------------------------------------------------");
 console.log("");
 console.log("Trusty y Falsy:");
 //Truty y Falsy
@@ -57,8 +77,7 @@ if (valorTruthy) {
 } else {
   console.log("Este bloque de código no se ejecutará, porque el valor es truthy.");
 }
-
-console.log("");
+console.log("------------------------------------------------------------------");
 console.log("Alcances de variables global y locales:");
 //Alcances de variables Scope
 function global() {
@@ -73,6 +92,7 @@ console.log("Llamamos a la funcion, devuelve el valor de a= " + global());
 console.log("Variable global: " + a);
 console.log("Llamamos a la funcion devuelve el valor de b= " + local());
 //console.log(b); //Variable local
+console.log("------------------------------------------------------------------");
 var c = 5;
 var d = 10;
 if (c === 5) {
@@ -83,7 +103,7 @@ if (c === 5) {
 }
 console.log(c); //5
 console.log(d); //1
-
+console.log("------------------------------------------------------------------");
 console.log("");
 console.log("Hoisting: Puede usar una variable o llamar a una función antes de que se declare en el código.");
 
@@ -104,7 +124,9 @@ function diHola() {
   console.log(x); //undefined
   x = 10;
 }
+console.log("------------------------------------------------------------------");
 
+console.log("------------------------------------------------------------------");
 //Cheatsheet
 const name = "Proful";
 const city = "Jetpore";
