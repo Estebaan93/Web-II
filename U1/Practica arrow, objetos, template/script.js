@@ -1,15 +1,22 @@
 console.log('Funcion flecha permite una sintaxis mas corta:');
-console.log('Funcion flecha una linea:');
+console.log('Funcion flecha una linea: (con retorno implicito)');
 const sumar = (a, b) => a + b;
 console.log(sumar(2,3));
-console.log("------------------------------------------------------------------");
+console.log("");
 
-console.log('Funcion flecha multiple lineas:')
+console.log('Funcion flecha multiple lineas: (con retorno explicito)')
 const multiplicar=(a,b)=>{
   const resultado2= a*b;
   return resultado2;
 };
 console.log(multiplicar(2,3));
+console.log('');
+
+console.log('Sin retorno:')
+const saludar= ()=>{
+  console.log('Hola mundo');
+  //No hay valor de retorno
+}
 console.log("------------------------------------------------------------------");
 
 console.log('ES6:');
@@ -210,6 +217,7 @@ let user = {
   esAdministrador: true
 };
 
+
 for(let i in user){
   //keys
   /*alert(i);
@@ -228,6 +236,7 @@ variable="Hola"; // tipo string
 console.log(typeof variable); // salida string
 console.log("");
 
+
 console.log("Tipado debil:");
 let x1 = "5";
 let y1 = 2;
@@ -241,4 +250,3 @@ if("0"){
 } else {
   console.log("Falso");
 }
-
