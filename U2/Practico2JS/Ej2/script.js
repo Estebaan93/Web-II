@@ -1,6 +1,9 @@
 // main.js
-import {obtenerFechaHoraActual} from './ModuloFecha.js';
+//import {obtenerFechaHoraActual} from './ModuloFecha.js';
 
-const fechaHoraActual = obtenerFechaHoraActual();
-console.log('Fecha y hora actual:', fechaHoraActual);
+//const fechaHoraActual = obtenerFechaHoraActual();
+const horaActual= require('./moduloFecha');
 
+//console.log('Fecha y hora actual:', fechaHoraActual);
+
+console.log('Fecha y hora actual: ',horaActual);

@@ -41,16 +41,16 @@ class Empleado extends Persona{
     }
 
 }
-Ale=new Persona("Alejandro",45,1.70,80);
+Facundo=new Persona("Facundo",45,1.70,80);
 Juan=new Empleado("Juan",43,1.78,85,300000);
 Luis=new Empleado("Luis",55,1.56,76,299990);
 Esteban=new Empleado('Esteban',30, 1.70, 76, 230000);
 
-ale= Empleado.fromPersona(Ale,276666666);
+facu= Empleado.fromPersona(Facundo,276666666);
 
-Ale.mostrar();
+Facundo.mostrar();
 Juan.mostrar();
-ale.mostrar();
+facu.mostrar();
 Esteban.mostrar();
 
 console.log('Cantidad de instancias de empleados:',Empleado.cantidad);

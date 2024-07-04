@@ -10,6 +10,13 @@ const multiplicar=(a,b)=>{
   return resultado2;
 };
 console.log(multiplicar(2,3));
+
+const operaciones= (a,b)=>{
+  const suma= a+b;
+  const resta= a-b;
+  return [suma, resta];
+};
+console.log('Llamamos a operaciones: ',operaciones(6,2));
 console.log('');
 
 console.log('Sin retorno:')
@@ -17,6 +24,12 @@ const saludar= ()=>{
   console.log('Hola mundo');
   //No hay valor de retorno
 }
+
+const decirHola=()=>'decirHola';
+console.log(decirHola());
+
+const cuadrado= n=>n*n;
+console.log('Cuadrdao: ',cuadrado(3));
 console.log("------------------------------------------------------------------");
 
 console.log('ES6:');

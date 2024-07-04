@@ -20,12 +20,12 @@ console.log('Si no hay argumentos, empezamos con 2 paréntesis y la flecha: (set
 let i=0;
 let miIntervalo=setInterval(()=>{
 	i++;
-	console.log('Ejecución en paralelo setInterval');
+	console.log('Ejecución en paralelo setInterval->23');
 	if(i===3){
 		//Detener el intervalo
 clearInterval(miIntervalo);
 	}
-}, 1000);
+}, 2000);
 
 console.log('Con un argumento, no usamos paréntesis:');
 var vocales=['a','e','i','o','u'];
@@ -311,7 +311,7 @@ function obtenerRespuesta () {
 //Utilizamos la nueva promesa para obtener los datos y manejar el resultado
 obtenerRespuesta()
 	.then(datos=>{
-		console.log('Datos obtenidos de la promesa', datos);
+		console.log('Datos obtenidos de la promesa', datos,'->314');
 	})
 	.catch(error=>{
 		console.log('Error', error);
@@ -320,7 +320,7 @@ obtenerRespuesta()
 //Funcion moderna con try catch
 obtenerRespuesta()
     .then(function(datos) {
-        console.log("Suceso de la promesa");
+        console.log("Suceso de la promesa->323");
     })
     .catch(function(error) {
         console.log("error", error);
@@ -330,21 +330,21 @@ console.log('');
 const miPromesa = new Promise((resolve, reject)=>{
 	setTimeout(()=>{
 		resolve('PIZZA');
-	}, 300);
+	}, 3000);
 });
 
 
 function resolve1(data) {
-	console.log('Primer then:', data);
+	console.log('Primer then:', data,'->338');
 	return 'Paso 1 completado';
 }
 
 function reject1(error) {
-	console.error('Error en el paso 1:', error);
+	console.error('Error en el paso 1:', error,'->343');
 }
 
 function resolve2(data) {
-	console.log('Segundo then:', data);
+	console.log('Segundo then:', data,'->347');
 	return 'Paso 2 then 2 completado';
 }
 
@@ -352,7 +352,7 @@ function reject2(error) {
 	console.error('Error en el segundo then:', error);
 }
 function resolve3(data) {
-	console.log('Tercer then:', data);
+	console.log('Tercer then:', data,'->355');
 }
 
 function reject3(error) {
@@ -363,3 +363,55 @@ miPromesa
 	.then(resolve1,reject1)
 	.then(resolve2,reject2)
 	.then(resolve3,reject3);
+console.log('-------------------------------------------------------------------------------');
+console.log('');
+console.log(`Metodos de objetos:`);
+console.log('Object.assing() copiar las porpiedades de un obj a otro, desde source a tarjet:');
+
+let tarjet1={};
+let source1={a:1, b:2, c:3};
+let source2={
+	name: 'Esteban',
+	color: 'Azul'
+}
+console.log('target1 antes de copiar los elementos: ',tarjet1);
+Object.assign(tarjet1, source1);
+console.log('target1: ',tarjet1);
+let copia= Object.assign({}, source2);
+console.log('Imprimimos copia con for..in:');
+for (let data in copia) {
+	console.log(`${data}: ${copia[data]}`);
+}
+console.log('');
+console.log('Usando Object.keys: devuelve un array de las claves del objeto:');
+Object.keys(copia).forEach(data=>{
+	console.log(`${data}: ${copia[data]}`);
+})
+console.log('');
+console.log('Usando Object.values: devuelve un array de los valores del objeto:');
+Object.values(copia).forEach(data=>{
+	console.log(data);
+});
+console.log('');
+console.log('Usando Object.entries: devuelve un array de los pares del objeto (clave-valor):');
+Object.entries(copia).forEach(([clave, data])=>{
+	console.log(`${clave}: ${data}`);
+});
+console.log('');
+console.log('Usando un bucle for..of con Object.entries: iteramos sobre los pares (clave-valor) del objeto:')
+for (let [clave, data] of Object.entries(copia)) {
+	console.log(`${clave}: ${data}`);
+}
+console.log('');
+console.log('-------------------------------------------------------------------------------');
+console.log(`Object.is: determina si son iguales.s similar al operador === con la diferencia qe que éste 
+		último trata los valores -0 y +0 como iguales:`);
+console.log('cerveza->cerveza: ',Object.is('cerveza', "cerveza"));
+console.log('[]->[]: ',Object.is([], [])); //Devuelve false por ser comparados por referencia
+const array1=[];
+const array2=array1;
+console.log('array1->array2 (apunta a array1): ',Object.is(array1, array2));
+console.log("null->null: ",Object.is(null,null));
+console.log("0->-0: ",Object.is(0,-0));
+console.log('NaN->0/0: ', Object.is(NaN, 0/0));
+console.log('');

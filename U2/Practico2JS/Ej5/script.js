@@ -1,5 +1,5 @@
 // JSON data sin datos persisitentes
-let books = [
+let libros = [
 {
   "id": "978-0641723445",
   "label": ["book", "hardcover"],
@@ -7,7 +7,7 @@ let books = [
   "author": "Rick Riordan",
   "series_t": "Percy Jackson and the Olympians",
   "genre_s": "fantasy",
-  "inStock": true,
+  "inStock": false,
   "price": 12,
   "pages_i": 384
 },
@@ -32,10 +32,10 @@ let books = [
   "pages_i": 475
 }
 ];
-console.log(typeof books);
+console.log(typeof libros);
 
 // Function to add a new book
-function addBook() {
+function crearLibro() {
   const id = document.getElementById('id').value;
   const label = document.getElementById('label').value.split(',');
   const name = document.getElementById('name').value;
@@ -45,7 +45,7 @@ function addBook() {
   const price = parseFloat(document.getElementById('price').value);
   const pages = parseInt(document.getElementById('pages').value);
 
-  const newBook = {
+  const nuevoLibro = {
     "id": id,
     "label": label,
     "name": name,
@@ -56,7 +56,7 @@ function addBook() {
     "pages_i": pages
   };
 
-  books.push(newBook);
+  libros.push(nuevoLibro);
   document.getElementById('id').value = '';
   document.getElementById('label').value = '';
   document.getElementById('name').value = '';
@@ -69,26 +69,26 @@ function addBook() {
 }
 
 
-// Function to display all books
-function showAllBooks() {
-  const allBooksElement = document.getElementById('allBooks');
-  allBooksElement.innerHTML = '';
-  books.forEach(book => {
-    const li = document.createElement('li');
-    li.textContent = `${book.name} por ${book.author}`;
-    allBooksElement.appendChild(li);
+// Function para mostrar todos los libros
+function mostrarLibros() {
+  const mostrarTodos = document.getElementById('todosLibros');
+  mostrarTodos.innerHTML = '';
+  libros.forEach(data => {
+    const lista = document.createElement('li');
+    lista.textContent = `${data.name}, Autor: ${data.author}, Precio: ${data.price}, Stock: ${data.inStock ? 'Si' : 'No'}`;
+    mostrarTodos.appendChild(lista);
   });
 }
 
-// Function to display books above a certain price
+// Function filtrar por precios
 function showBooksAbovePrice() {
   const priceFilter = parseFloat(document.getElementById('priceFilter').value);
   const booksAbovePriceElement = document.getElementById('booksAbovePrice');
   booksAbovePriceElement.innerHTML = '';
-  const filteredBooks = books.filter(book => book.price > priceFilter);
-  filteredBooks.forEach(book => {
+  const filteredBooks = libros.filter(data => data.price > priceFilter);
+  filteredBooks.forEach(data => {
     const li = document.createElement('li');
-    li.textContent = `${book.name} por ${book.author}`;
+    li.textContent = `${data.name} por ${data.author}`;
     booksAbovePriceElement.appendChild(li);
   });
   document.getElementById('priceFilter').value='';

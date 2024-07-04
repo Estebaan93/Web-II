@@ -1,9 +1,18 @@
-	console.log('Funciones basicas:');
+console.log('Funciones basicas:');
 function suma (x,y) {
 	return x+y;
 	console.log('Esta linea nunca se ejecutara');	//Lo que esta despues del return no se ejecuta
 }
 console.log(suma(1,3));
+console.log('');
+let dias=['Lunes','Martes','Miercoles','Jueves','Viernes','Sabado','Domingo'];
+function obtenerDia (n) {
+	if(n<1 || n>7){
+		throw new Error("Dia incorrecto");
+	}
+	return dias[n-1];
+}
+console.log(obtenerDia(1));
 console.log("------------------------------------------------------------------");
 
 function obtNumLetras (str) {
