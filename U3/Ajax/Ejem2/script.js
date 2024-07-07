@@ -1,8 +1,9 @@
 // console.log("Activo");
-
-// document.getElementById('dolar').addEventListener('click', function(){
-//   obtenerDatos('dolar');
-// });
+/*Se comenta porque del lado del html se llama directo a obtenerDatos(dolar) ventajas???*/
+/*document.getElementById('dolar').addEventListener('click', function(){
+  obtenerDatos('dolar');
+ });
+*/
 
 document.getElementById('euro').addEventListener('click', function(){
   obtenerDatos('euro');
@@ -10,9 +11,9 @@ document.getElementById('euro').addEventListener('click', function(){
 
 function obtenerDatos(valor){
   //console.log("Diste click");
-  let url= `https://mindicador.cl/api/${valor}`;
+  let url= `https://mindicador.cl/api/${valor}`; //Segun el tipo le concatenamos el valor
 
-  const api= new XMLHttpRequest();
+  const api= new XMLHttpRequest(); //Nueva instancia
   api.open('GET', url, true);
   api.send();
 
@@ -22,7 +23,7 @@ function obtenerDatos(valor){
      console.log(datos.serie);
      let resultado= document.getElementById('lista');
      resultado.innerHTML='';
-     let i=0; 
+     let i=0; //Para mostrar solo hasta 10 objetos, se puede hacer con un for normal??
      
      for(let data of datos.serie){
       resultado.innerHTML+=`<li>${data.fecha.slice(0, 10)} | $ ${data.valor}</li>`;
