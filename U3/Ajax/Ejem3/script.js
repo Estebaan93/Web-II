@@ -1,17 +1,52 @@
 // console.log("Activo");
 
 function obtenerDatos(){
-  let url="catalogo.json";
-  console.log("Dentro de la funcion");
-  const api= new XMLHttpRequest();
-  api.open('GET', url, true);
-  api.send();
+  let url="https://rickandmortyapi.com/api/character";
+  // console.log("Dentro de la funcion");
+  //Con fetch API
+  fetch(url)
+    .then(response=>{
+      if(!response.ok){
+        throw new Error('Error al obtener los datos');
+      }
+      return response.json();
+    })
+    .then(data=>{
+      console.log(data);
+      manejarDatos(data); //Llamamos a la funcion
+    })
+    .catch(error=>{
+      console.error('Error', error);
+    });
+    
+ }
 
-  api.onreadystatechange= function(){
-    if(this.status ==200 && this.readyState==4){
-      console.log(this.responseText);
-      // let datos= this.responseText;
-    }
-  }
-  
+//Funcion manejar datos
+function manejarDatos(data){
+  const contenido= document.getElementById('divCards');
+  data.results.forEach(elemento=>{
+    const card= document.createElement('div');
+    card.classList.add('card');
+    
+    const img= document.createElement('img');
+    const name= document.createElement('h5');
+    const status= document.createElement('h5');
+    const species= document.createElement('p');
+
+    img.src=elemento.image;
+    img.alt=elemento.name;
+    name.innerHTML=`Nombre: ${elemento.name}`;
+    status.innerHTML=`Estado: ${elemento.status}`;
+    species.innerHTML=`Especie: ${elemento.species}`;    
+    
+    card.appendChild(img);
+    card.appendChild(name);
+    card.appendChild(status);
+    card.appendChild(species);
+    
+    contenido.appendChild(card);
+  });  
 }
+
+//Llamar a la funcion
+// obtenerDatos();
