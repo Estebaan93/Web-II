@@ -20,20 +20,30 @@ function obtenerDatos(){
   
 }
 
-//Funcion para manejar datos
 function manejarDatos(data){
+  const filterSpecies=document.getElementById('species').value;
+  const filterGender=document.getElementById('gender').value;
+  const filterData= data.filter(personaje=>{
+    return (filterSpecies==="" || personaje.species===filterSpecies)&& (filterGender==="" || personaje.gender===filterGender);
+  });
+  renderizarCards(filterData);
+  
+}
+
+
+//Funcion para manejar datos
+function renderizarCards(data){
   let i=0;
   const divCards=document.getElementById('divCards');
-  data.forEach(elemento=>{
-    const cards=document.createElement('div');
-    cards.classList.add('cards'); //Añadimos a clase cards
-    
-    i++;
-  
+  divCards.innerHTML=''; //Limpiar tarjetas anteriores
+  data.forEach(elemento=>{   
     if(i>32){
       return; //Cortamos al forEach devolviendo nada
     }
 
+    const cards=document.createElement('div');
+    cards.classList.add('cards'); //Añadimos a clase cards
+    
     if(!elemento.alive){
       cards.classList.add('muerto');
     }
@@ -44,7 +54,8 @@ function manejarDatos(data){
     const species=document.createElement('p');
     const casa=document.createElement('p');
 
-       
+
+    //Asignar por defecto una imagen si esta vacia   
     img.src=elemento.image || '../src/HarryPotter.jfif';
     img.alt=elemento.name;
     name.innerHTML=`Nombre: ${elemento.name}`;
@@ -60,7 +71,16 @@ function manejarDatos(data){
     
     divCards.appendChild(cards);  
      
-    // console.log(i);       
+    // console.log(i);    
+       
+    i++;
   });
   
 }
+
+
+//Inicializar Materialize CSS al cargar la pagina
+document.addEventListener('DOMContentLoaded', function(){
+  var elems= document.querySelectorAll('select');
+  M.FormSelect.init(elems);
+})

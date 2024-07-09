@@ -40,4 +40,9 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: rgba(255, 0, 0, 0.2); /* Fondo semi-transparente */}
+    background-color: rgba(255, 0, 0, 0.2); /* Fondo semi-transparente */
+  }
+
+  .select-wrapper input.select-dropdown{ /*La clase no esta en local, en materialize*/
+    color:white;
+  }

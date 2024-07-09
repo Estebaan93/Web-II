@@ -10,10 +10,32 @@
 <body>
     <div class="container">
         <div class="section">
-            <button class="btn" id=boton onclick="obtenerDatos()">Obtener datos</button>
+            <div class="row">
+                <div class="input-field col s6 ">
+                    <select id="species">
+                        <option value="" selected>Todas las especies</option>
+                        <option value="human">Humano</option>
+                        <option value="half-giant">Medio gigante</option>
+                        <option value="werewolf">Hombre lobo</option>
+                        <!-- Agrega más opciones según las especies disponibles -->
+                    </select>
+                    <label for="species">Especie</label>
+                </div>
+                <div class="input-field col s6">
+                    <select id="gender">
+                        <option value="" selected>Todos los géneros</option>
+                        <option value="male">Masculino</option>
+                        <option value="female">Femenino</option>
+                    </select>
+                    <label for="gender">Género</label>
+                </div>
+            </div>
+            <button class="btn" id="filterButton" onclick="obtenerDatos()">Filtrar</button>
+            <button class="btn" id="boton" onclick="obtenerDatos()">Obtener datos</button>
             <div id="divCards"></div>
         </div>    
     </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
