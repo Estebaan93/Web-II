@@ -1,0 +1,24 @@
+[
+  {
+    "model": "Intel(R) Celeron(R) N4020 CPU @ 1.10GHz",
+    "speed": 1094,
+    "times": {
+      "user": 8057781,
+      "nice": 0,
+      "sys": 5282546,
+      "idle": 44546078,
+      "irq": 332750
+    }
+  },
+  {
+    "model": "Intel(R) Celeron(R) N4020 CPU @ 1.10GHz",
+    "speed": 1094,
+    "times": {
+      "user": 8234062,
+      "nice": 0,
+      "sys": 5428156,
+      "idle": 44223609,
+      "irq": 63000
+    }
+  }
+]
