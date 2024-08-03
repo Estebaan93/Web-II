@@ -3,19 +3,20 @@ callbackMovies.csv. */
 
 const request=require('request');
 const fs=require('fs');
+const {convertirCSV,api}=require('./convertirCSVapi');
 
 //URL de la api studio ghibil
-const apiURL='https://ghibliapi.vercel.app/films';
+// const apiURL='https://ghibliapi.vercel.app/films';
 
 //Funcion para convertir a formato CSV
-function convertirCSV(movies){
-  const headers='Title,Release,Date\n';
-  const rows=movies.map(movie=>`${movie.title},${movie.release_date}`).join('\n');
-  return headers+rows;
-}
+// function convertirCSV(movies){
+//   const headers='Title, fecha\n';
+//   const rows=movies.map(movie=>`${movie.title},${movie.release_date}`).join('\n');
+//   return headers+rows;
+// }
 
 //Solicitar datos de la API
-request(apiURL,(error,response,body)=>{
+request(api,(error,response,body)=>{
   if(error){
     console.error(`Error de pedido request a la API: ${error.message}`);
     return;
@@ -27,7 +28,11 @@ request(apiURL,(error,response,body)=>{
   
   console.log('Procesando lista de peliculas: ');
   const movies=JSON.parse(body);
-
+  movies.forEach(movie=>{
+   console.log(`Titulo: ${movie.title} - año: ${movie.release_date}`); 
+  })
+  
+  console.log("");
   //Convertir a formato CSV
   const csvData=convertirCSV(movies);
 
@@ -42,3 +47,4 @@ request(apiURL,(error,response,body)=>{
   });
   
 });
+
