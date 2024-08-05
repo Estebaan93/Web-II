@@ -30,7 +30,7 @@ request(api, async(error,response,body)=>{
     console.error(`Error del pedido de la api: ${error.message}`);
     return;
   }
-  if(Response.statusCode!=200){
+  if(response.statusCode!=200){
     console.error(`La solicitud no tuvo exito: ${error.statusCode}`);
     return;
   }
