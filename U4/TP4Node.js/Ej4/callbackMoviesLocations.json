@@ -1,74 +1,66 @@
 [
   {
-    "title": "Spirited Away",
-    "locations": [
-      null
+    "nombre": "Spirited Away",
+    "ubicaciones": [
+      "Zeniba's Cottage",
+      "Bathhouse"
     ]
   },
   {
-    "title": "The Cat Returns",
-    "locations": [
-      null
+    "nombre": "The Cat Returns",
+    "ubicaciones": [
+      "The Cat Kingdom"
     ]
   },
   {
-    "title": "Howl's Moving Castle",
-    "locations": [
-      null
+    "nombre": "Howl's Moving Castle",
+    "ubicaciones": [
+      "Ingary"
     ]
   },
   {
-    "title": "Tales from Earthsea",
-    "locations": [
-      null
+    "nombre": "Tales from Earthsea",
+    "ubicaciones": []
+  },
+  {
+    "nombre": "Ponyo",
+    "ubicaciones": [
+      "Fujimoto's Underwater Harbor",
+      "Himawari Nursery School"
     ]
   },
   {
-    "title": "Ponyo",
-    "locations": [
-      null
+    "nombre": "Arrietty",
+    "ubicaciones": []
+  },
+  {
+    "nombre": "From Up on Poppy Hill",
+    "ubicaciones": []
+  },
+  {
+    "nombre": "The Wind Rises",
+    "ubicaciones": []
+  },
+  {
+    "nombre": "The Tale of the Princess Kaguya",
+    "ubicaciones": [
+      "Bamboo Forest"
     ]
   },
   {
-    "title": "Arrietty",
-    "locations": [
-      null
+    "nombre": "When Marnie Was There",
+    "ubicaciones": [
+      "The Marsh House"
     ]
   },
   {
-    "title": "From Up on Poppy Hill",
-    "locations": [
-      null
-    ]
+    "nombre": "The Red Turtle",
+    "ubicaciones": []
   },
   {
-    "title": "The Wind Rises",
-    "locations": [
-      null
-    ]
-  },
-  {
-    "title": "The Tale of the Princess Kaguya",
-    "locations": [
-      null
-    ]
-  },
-  {
-    "title": "When Marnie Was There",
-    "locations": [
-      null
-    ]
-  },
-  {
-    "title": "The Red Turtle",
-    "locations": [
-      null
-    ]
-  },
-  {
-    "title": "Earwig and the Witch",
-    "locations": [
-      null
+    "nombre": "Earwig and the Witch",
+    "ubicaciones": [
+      "St. Morwald's Home for Children"
     ]
   }
 ]
