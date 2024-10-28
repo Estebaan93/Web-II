@@ -7,7 +7,7 @@ const PORT=3000;
 
 app.use(express.static(path.join(__dirname,'public')));
 
-app.get('/api/system-info',obtenerInfo);
+app.get('/system-info',obtenerInfo);
 
 app.get('/',(req,res)=>{
   res.sendFile(path.join(__dirname,'public','index.html'));

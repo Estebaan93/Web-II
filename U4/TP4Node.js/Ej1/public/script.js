@@ -2,7 +2,7 @@ console.log("activo");
 
 async function obtenerInfo(){
   try {
-    const response=await fetch('/api/system-info');
+    const response=await fetch('/system-info');
     const info=await response.json();
 
     document.getElementById('infoPc').innerHTML=`
@@ -27,4 +27,7 @@ async function obtenerInfo(){
      console.error('Error:', error);
   }
 }
-obtenerInfo();
+setInterval(()=>{
+  obtenerInfo();
+},2000);
+

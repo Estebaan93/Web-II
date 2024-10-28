@@ -1,4 +1,11 @@
 //DECLARACION DE FUNCION
+
+function sayHi(parametro){
+  return parametro;
+}
+const argumento='Hola';
+sayHi(argumento);
+
 //Devuelve el valor minimo
 function min(a,b){
   return (a<b) ? a : b
@@ -103,3 +110,15 @@ func(
   ()=> alert("Ejecutando"),
   ()=> alert("Cancelaste la ejecucion")
 );
+
+
+let promise = new Promise(function(resolve, reject) {
+  // la función se ejecuta automáticamente cuando se construye la promesa
+
+  // después de 1 segundo, indica que la tarea está hecha con el resultado "hecho"
+  setTimeout(() => resolve("hecho"), 1000);
+});
+
+promise.then(
+  result=>console.log(result),
+  error=>console.log(error));
