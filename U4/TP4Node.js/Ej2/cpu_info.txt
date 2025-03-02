@@ -1,24 +1,31 @@
-[
-  {
-    "model": "Intel(R) Celeron(R) N4020 CPU @ 1.10GHz",
-    "speed": 1094,
-    "times": {
-      "user": 8057781,
-      "nice": 0,
-      "sys": 5282546,
-      "idle": 44546078,
-      "irq": 332750
+{
+  "cpus": [
+    {
+      "model": "AMD EPYC 7763 64-Core Processor",
+      "speed": 0,
+      "times": {
+        "user": 104730,
+        "nice": 20,
+        "sys": 90940,
+        "idle": 1102960,
+        "irq": 0
+      }
+    },
+    {
+      "model": "AMD EPYC 7763 64-Core Processor",
+      "speed": 0,
+      "times": {
+        "user": 97850,
+        "nice": 0,
+        "sys": 91250,
+        "idle": 1114920,
+        "irq": 0
+      }
     }
-  },
-  {
-    "model": "Intel(R) Celeron(R) N4020 CPU @ 1.10GHz",
-    "speed": 1094,
-    "times": {
-      "user": 8234062,
-      "nice": 0,
-      "sys": 5428156,
-      "idle": 44223609,
-      "irq": 63000
-    }
+  ],
+  "ram": {
+    "total": "7929.55 MB",
+    "free": "5941.78 MB",
+    "used": "1987.77 MB"
   }
-]
+}
