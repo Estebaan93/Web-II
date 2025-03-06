@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo AJAX</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+
+    <h2>Ejemplo AJAX con jQuery</h2>
+    <button id="cargarMensaje">Cargar Mensaje</button>
+    <p id="mensaje"></p>
+
+    <script>
+        $(document).ready(function(){
+            $("#cargarMensaje").click(function(){
+
+                // 1️⃣ CREAMOS UN OBJETO XMLHttpRequest (Esto lo hace jQuery internamente)
+                $.ajax({
+                    url: "mensaje.txt", //ESTE ARCHIVO TIENE ELMENSAJE
+                    type: "GET", // METDO HTTP GET
+
+                    // 2️⃣ ENVIAR LA SOLICITUD (jQuery lo hace automaticamente NO SE RECARGA)
+                    
+                    // 3️⃣ MANEJAR LA RESPUESTA
+                    success: function(data) { // SI ES EXITOSA MENSAJE
+                        $("#mensaje").text(data);
+                    },
+                    error: function() { // SI HAY ERROR MENSAJE
+                        $("#mensaje").text("Error al cargar el mensaje.");
+                    }
+                });
+            });
+        });
+    </script>
+
+</body>
+</html>

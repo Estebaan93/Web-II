@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo Fetch API con JSON</title>
+</head>
+<body>
+
+    <h2>Ejemplo de Fetch API con JSON</h2>
+    <button id="cargarDatos">Cargar Datos</button>
+    <p id="resultado"></p>
+
+    <script>
+        document.getElementById("cargarDatos").addEventListener("click", () => {
+            //  HACEMOS LA SOLICITUD CON FETCH
+            fetch("INDEX1.json") 
+                .then(response => {   // CONVIERTE RESPUESTA EN JSON
+                    if (!response.ok) {
+                        throw new Error("Error al cargar los datos");
+                    }
+                    return response.json(); // DEVULEVE SIN RECARCAR LOS DATOS EN FORMATO JSON
+                })
+                .then(data => {
+                    // MANEJAMOS LA RESPUESTA JSON
+                    document.getElementById("resultado").innerHTML = // obtiene el eleemnto resultado, y lo modifica a html
+                        `Nombre: ${data.nombre} <br> Edad: ${data.edad}`;  // toma los valores de data, ${} lo usamos para evitar la 
+                        // interpoblacion de variable 
+                })
+                .catch(error => {
+                    document.getElementById("resultado").textContent = error.message;
+                });
+        });
+    </script>
+
+</body>
+</html>

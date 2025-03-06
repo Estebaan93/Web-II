@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo JSON con AJAX</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+
+    <h2>Ejemplo de JSON con AJAX</h2>
+    <button id="cargarDatos">Cargar Datos</button>
+    <p id="resultado"></p>
+
+    <script>
+        $(document).ready(function(){
+            $("#cargarDatos").click(function(){
+                // 1️⃣ CREAMOS LA SOLIC AJAX PARA CARGAR JSON
+                $.ajax({
+                    url: "INDEX1.json", // Archivo JSON
+                    type: "GET",
+                    dataType: "json",
+
+                    // 2️⃣ MANEJAMOS  LA RESPUESTA
+                    success: function(data) {  // PROP. DEL OBJETO ajax() + la funcion data que recibe el json
+                        $("#resultado").html("Nombre: " + data.nombre + "<br>Edad: " + data.edad);
+                    },
+
+                    error: function() {
+                        $("#resultado").text("Error al cargar los datos.");
+                    }
+                });
+            });
+        });
+    </script>
+
+</body>
+</html>

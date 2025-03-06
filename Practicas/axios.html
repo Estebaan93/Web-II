@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo Axios</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+<body>
+    <h2>Consulta de edad con Axios</h2>
+    <input type="text" id="nombre" placeholder="Escribe un nombre">
+    <button onclick="obtenerEdad()">Consultar</button>
+    <p id="resultado"></p>
+
+    <script>
+        function obtenerEdad() {
+            let nombre = document.getElementById("nombre").value;
+            let resultadoDiv = document.getElementById("resultado");
+
+            if (!nombre) {
+                resultadoDiv.innerHTML = " Ingresa un nombre";
+                return;
+            }
+
+            axios.get(`https://api.agify.io?name=${nombre}`) //hace solicitud
+                .then(response => {  //maneja respuesta
+                    let data = response.data;  //data es objeto que obtiene de api, 
+                    // response.data a ese objeto lo pas a json
+                    resultadoDiv.innerHTML = `🔹 Nombre: ${data.name} <br> 🔹 Edad estimada: ${data.age}`;
+                })
+                .catch(error => { //si falla la api
+                    resultadoDiv.innerHTML = "❌ Error al obtener los datos";
+                    console.error(error);
+                });
+        }
+    </script>
+</body>
+</html>
