@@ -20,7 +20,7 @@ async function calcularCuadrados() {
         let obj1 = await cuadradoPromise(2);
         let obj2 = await cuadradoPromise(4);
         let obj3 = await cuadradoPromise(6);
-        let obj4 = await cuadradoPromise("8"); // Error aquí
+        let obj4 = await cuadradoPromise(8); // Error aquí
         let obj5 = await cuadradoPromise(10);
 
         resultadoDiv.innerHTML = `
@@ -39,7 +39,7 @@ async function calcularCuadrados() {
 document.getElementById("calcular").addEventListener("click", calcularCuadrados);
 
 // pro
-/*document.getElementById("calcular").addEventListener("click", calcularCuadrados);
+document.getElementById("calcular").addEventListener("click", calcularCuadrados);
 
 async function calcularCuadrados() {
 try {
@@ -57,8 +57,8 @@ console.log(`✅ Cuadrado de ${obj3.valor}: ${obj3.resultado}`);
 let obj4 = await cuadradoPromise(8);
 console.log(`✅ Cuadrado de ${obj4.valor}: ${obj4.resultado}`);
 
-let obj5 = await cuadradoPromise("10"); // Este lanzará un error
-console.log(`✅ Cuadrado de ${obj5.valor}: ${obj5resultado}`);
+let obj5 = await cuadradoPromise(10); // Este lanzará un error
+console.log(`✅ Cuadrado de ${obj5.valor}: ${obj5.resultado}`);
 
 } catch (error) {
 console.error(`❌ ${error}`);
@@ -66,4 +66,4 @@ console.error(`❌ ${error}`);
 }
 
 // Llamar la función en la consola
-calcularCuadrados();*/
+calcularCuadrados();

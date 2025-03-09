@@ -26,6 +26,7 @@
                     // 3️⃣ MANEJAR LA RESPUESTA
                     success: function(data) { // SI ES EXITOSA MENSAJE
                         $("#mensaje").text(data);
+                        console.log("Se cargo el dato")
                     },
                     error: function() { // SI HAY ERROR MENSAJE
                         $("#mensaje").text("Error al cargar el mensaje.");

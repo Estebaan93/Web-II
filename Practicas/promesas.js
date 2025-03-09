@@ -27,7 +27,7 @@ document.getElementById("ejecutar").addEventListener("click", () => { // se busc
         })
         .then((obj) => {
             resultadoDiv.innerHTML += `<p>✔️ Resultado: ${obj.valor}² = ${obj.resultado}</p>`;
-            return cuadradoPromise("cuatro"); // se genera un error xq madamos el string
+            return cuadradoPromise(4); // se genera un error xq madamos el string
         })
         .then((obj) => {
             resultadoDiv.innerHTML += `<p>✔️ Resultado: ${obj.valor}² = ${obj.resultado}</p>`;

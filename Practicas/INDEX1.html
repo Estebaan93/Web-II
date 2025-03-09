@@ -23,9 +23,9 @@
 
                     // 2️⃣ MANEJAMOS  LA RESPUESTA
                     success: function(data) {  // PROP. DEL OBJETO ajax() + la funcion data que recibe el json
+                        console.log("Mensaje recibido:",data);
                         $("#resultado").html("Nombre: " + data.nombre + "<br>Edad: " + data.edad);
                     },
-
                     error: function() {
                         $("#resultado").text("Error al cargar los datos.");
                     }

@@ -26,6 +26,7 @@
                     document.getElementById("resultado").innerHTML = // obtiene el eleemnto resultado, y lo modifica a html
                         `Nombre: ${data.nombre} <br> Edad: ${data.edad}`;  // toma los valores de data, ${} lo usamos para evitar la 
                         // interpoblacion de variable 
+                    console.log(data);
                 })
                 .catch(error => {
                     document.getElementById("resultado").textContent = error.message;
